@@ -1,0 +1,22 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+!releases/**/artifacts
+cache_hardhat
+
+# Build
+dist
+abis
+generated-delta
+deployments-summary.json
+
+# Soko
+.soko
+.soko-typings
