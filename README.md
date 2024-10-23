@@ -156,9 +156,19 @@ npm run changeset publish
 
 The ABIs for all contracts organized by `tag` are exposed through the NPM package.
 
+```ts
+import { abi as counterAbi } from "hardhat-soko-example/abis/v1.0.1/src_counter.sol_counter";
+```
+
 ### Content of the exposed deployments in NPM package
 
 Deployment files are named based on the deployed contract and the used tag. It allows us to derive a summary as a JSON file of the various deployments organized by tags and organized by network (chain ID)
+
+```ts
+import deployments from "hardhat-soko-example/deployments-summary.json";
+```
+
+where the JSON content is as follows
 
 ```json
 {
