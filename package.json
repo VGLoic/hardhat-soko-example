@@ -1,6 +1,6 @@
 {
   "name": "hardhat-soko-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Integration example for Hardhat and Soko",
   "author": "Loïc Vincent-Genod",
   "license": "MIT",
