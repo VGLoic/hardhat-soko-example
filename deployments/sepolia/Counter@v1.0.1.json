@@ -1,0 +1,48 @@
+{
+  "address": "0x1EF2c58BEF12804AF6c21A25098840E197DfBCFA",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "counter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "increment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x6dbbcc8512bd9fb5c40a73dbbdc5a18e6a910a697bfede0043cd5cb1233c8507",
+  "receipt": {
+    "to": null,
+    "from": "0x25371B936fD45e67F00dfEa1cd6A3e77105DD0FA",
+    "contractAddress": "0x1EF2c58BEF12804AF6c21A25098840E197DfBCFA",
+    "transactionIndex": 55,
+    "gasUsed": "139649",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4b3675b37db4d0836e36b44cb121c906b8981add986ad543ad0329e3d3b4e376",
+    "transactionHash": "0x6dbbcc8512bd9fb5c40a73dbbdc5a18e6a910a697bfede0043cd5cb1233c8507",
+    "logs": [],
+    "blockNumber": 6930322,
+    "cumulativeGasUsed": "6947496",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"counter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Counter.sol\":\"Counter\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"src/Counter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\nimport {IncrementOracle} from \\\"./IncrementOracle.sol\\\";\\n\\ncontract Counter {\\n    uint256 public counter;\\n\\n    function increment() public {\\n        uint256 incrementAmount = IncrementOracle.getIncrement();\\n        counter += incrementAmount * 1;\\n    }\\n}\\n\",\"keccak256\":\"0xf947aa2645689e2ed4bb08e2289ab13a2d2361383c3a5e0eb8d18b51c926f2ab\",\"license\":\"MIT\"},\"src/IncrementOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.13;\\n\\nlibrary IncrementOracle {\\n    function getIncrement() external pure returns (uint256) {\\n        return 1;\\n    }\\n}\\n\",\"keccak256\":\"0xc3e351138293da096227c1b6b169653542c80abc1c0b37e962dffc58ac048eff\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "608060405234801561001057600080fd5b50610190806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806361bc221a1461003b578063d09de08a14610056575b600080fd5b61004460005481565b60405190815260200160405180910390f35b61005e610060565b005b6000738ee47615488409c9C44c6e3371B9202342D7e8BA636ac4691f6040518163ffffffff1660e01b8152600401602060405180830381865af41580156100ab573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100cf91906100f4565b90506100dc816001610123565b6000808282546100ec9190610142565b909155505050565b60006020828403121561010657600080fd5b5051919050565b634e487b7160e01b600052601160045260246000fd5b600081600019048311821515161561013d5761013d61010d565b500290565b600082198211156101555761015561010d565b50019056fea2646970667358221220acb7b21286ae6a24774c6383e6793d96085d95fdfbf0c16e7608ada332b2e73964736f6c634300080d0033",
+  "libraries": {
+    "src/IncrementOracle.sol:IncrementOracle": "0x8ee47615488409c9C44c6e3371B9202342D7e8BA"
+  }
+}
