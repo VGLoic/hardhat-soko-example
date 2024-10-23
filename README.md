@@ -71,7 +71,7 @@ The matching code is
             const { generateDiffWithTargetRelease, LocalStorageProvider } = require("hardhat-soko/scripts");
             const diff = await generateDiffWithTargetRelease(
               "./artifacts",
-              { project: "assured-counter", tagOrId: "latest" },
+              { project: "doubtful-counter", tagOrId: "latest" },
                undefined,
                new LocalStorageProvider(".soko")
             );
@@ -191,7 +191,7 @@ const deployCounter: DeployFunction = async function (
 ) {
   const { deployer } = await hre.getNamedAccounts();
 
-  const projectUtils = project("assured-counter").tag(TARGET_RELEASE);
+  const projectUtils = project("doubtful-counter").tag(TARGET_RELEASE);
 
   const incrementOracleArtifact = await projectUtils.getContractArtifact(
     "src/IncrementOracle.sol:IncrementOracle",
