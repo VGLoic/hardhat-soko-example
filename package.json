@@ -22,7 +22,7 @@
     "format:check": "prettier --check --ignore-unknown --plugin=prettier-plugin-solidity 'src/**/*.sol' \"scripts\"",
     "format:contracts": "prettier --write --plugin=prettier-plugin-solidity 'src/**/*.sol'",
     "format": "prettier --write --plugin=prettier-plugin-solidity 'src/**/*.sol' 'scripts/**/*.ts'",
-    "compile": "npm run format:contracts && forge build --skip test --force",
+    "compile": "npm run format:contracts && hardhat compile --force --no-typechain",
     "lint": "eslint 'scripts'",
     "release": "./.github/release.sh",
     "hardhat": "hardhat",

@@ -20,12 +20,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      - run: yarn install --frozen-lockfile
+      - run: npm ci
       - name: Generate default typings
-        run: yarn hardhat soko typings
-      - run: yarn format:check
-      - run: yarn lint
-      - run: yarn typecheck
+        run: npm run hardhat soko typings
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run typecheck
   simulate-release:
     name: Simulate release
     runs-on: ubuntu-latest
@@ -38,11 +38,11 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
-        run: yarn
+        run: npm ci
       - name: Create artifacts
-        run: yarn compile
+        run: npm run compile
       - name: Pull latest release
-        run: yarn hardhat soko pull --artifact doubtful-counter:latest
+        run: npm run hardhat soko pull -- --tag latest
       - name: Create diff between artifacts and latest release
         id: artifacts-diff
         uses: actions/github-script@v7

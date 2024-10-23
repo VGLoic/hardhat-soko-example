@@ -22,12 +22,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      - run: yarn install --frozen-lockfile
+      - run: npm ci
       - name: Generate default typings
-        run: yarn hardhat soko typings
-      - run: yarn format:check
-      - run: yarn lint
-      - run: yarn typecheck
+        run: npm run hardhat soko typings
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run typecheck
   release:
     name: Upload latest release artifacts and release NPM package
     runs-on: ubuntu-latest
@@ -40,11 +40,11 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
-        run: yarn
+        run: npm ci
       - name: Create artifacts
-        run: yarn compile
+        run: npm run compile
       - name: Push latest release to storage
-        run: yarn hardhat soko push --artifact-path ./artifacts --tag doubtful-counter:latest --force
+        run: npm run hardhat soko push -- --artifact-path ./artifacts --tag latest --force
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -56,7 +56,7 @@ jobs:
           # 2. Download the releases,
           # 3. Build the artifacts for the NPM package,
           # 4. Publish the NPM package
-          publish: yarn release
+          publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
