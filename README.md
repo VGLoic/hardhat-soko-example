@@ -1,5 +1,8 @@
 # Foundry and Hardhat Soko integration example
 
+> [!WARNING]
+> This project has been moved to a new [repository](https://https://github.com/VGLoic/soko-monorepo)
+
 This repository is an example of integration between [Hardhat](https://hardhat.org/) and the [Hardhat Soko plugin](https://github.com/VGLoic/hardhat-soko).
 
 - Testing and compilation is handled by [Hardhat](https://hardhat.org/),
